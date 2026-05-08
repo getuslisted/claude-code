@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marrow Theme &middot; quality-checks reference implementation</title>
+  <meta name="description" content="A drop-in theme + 8 component blocks built on OKLCH tokens, accessible by default, scoped to never leak styles into your host site." />
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="blocks.css" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='4' fill='%23c8552b'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- =========================================================
+       NAV
+       ========================================================= -->
+  <header class="qc-nav">
+    <div class="container qc-nav__inner">
+      <a class="qc-nav__brand" href="#">
+        <span class="qc-nav__brand-mark" aria-hidden="true"></span>
+        Marrow
+      </a>
+      <nav class="qc-nav__links" aria-label="Primary">
+        <a href="#features">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">Questions</a>
+      </nav>
+      <span class="qc-nav__spacer"></span>
+      <div class="qc-nav__cta">
+        <a href="#login">Sign in</a>
+        <a class="btn btn--primary btn--sm" href="#start">Start free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+    <section class="qc-hero">
+      <div class="container qc-hero__inner">
+        <div>
+          <span class="eyebrow qc-hero__eyebrow">For solo creatives</span>
+          <h1 class="qc-hero__title">
+            A <em>quiet</em> money tracker for one-person studios.
+          </h1>
+          <p class="qc-hero__lede">
+            Marrow tracks income, expenses, and the taxes you owe each quarter.
+            Nothing else. No charts that don&rsquo;t matter, no notifications
+            that interrupt the work.
+          </p>
+          <div class="qc-hero__actions">
+            <a class="btn btn--primary btn--lg" href="#start">Start free</a>
+            <a class="btn btn--ghost btn--lg" href="#tour">Take the tour</a>
+          </div>
+        </div>
+
+        <aside class="qc-hero__aside" aria-label="This quarter at a glance">
+          <div class="qc-hero__aside-row">
+            <span class="qc-hero__aside-label">income</span>
+            <span class="qc-hero__aside-value">$ 18,420.00</span>
+          </div>
+          <div class="qc-hero__aside-row">
+            <span class="qc-hero__aside-label">expenses</span>
+            <span class="qc-hero__aside-value">$ 4,180.13</span>
+          </div>
+          <div class="qc-hero__aside-row">
+            <span class="qc-hero__aside-label">set aside for taxes</span>
+            <span class="qc-hero__aside-value qc-hero__aside-value--accent">$ 4,272.00</span>
+          </div>
+          <div class="qc-hero__aside-row">
+            <span class="qc-hero__aside-label">due Apr&nbsp;15</span>
+            <span class="qc-hero__aside-value">68 days</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FEATURES
+         Lead feature on the left, two supporting on the right.
+         Deliberately not three identical cards.
+         ========================================================= -->
+    <section class="qc-features" id="features">
+      <div class="container">
+        <header class="qc-features__lead">
+          <span class="eyebrow">How it works</span>
+          <h2 class="qc-features__title">Three numbers. Nothing more.</h2>
+          <p class="qc-features__lede">
+            Most accounting tools answer questions you didn&rsquo;t ask.
+            Marrow answers the only three that pay your rent.
+          </p>
+        </header>
+
+        <div class="qc-features__grid">
+
+          <article class="qc-feature qc-feature--lead">
+            <span class="qc-feature__num">01</span>
+            <h3 class="qc-feature__title">Income, expenses, taxes owed.</h3>
+            <p class="qc-feature__body">
+              Connect a bank account, tag transactions, and Marrow keeps a
+              running tally of what you&rsquo;ve earned, what you&rsquo;ve spent,
+              and what you owe to the tax authority. That&rsquo;s the whole app.
+            </p>
+            <div class="qc-feature__example" aria-hidden="true">
+              <div class="qc-feature__example-row">
+                <span>january</span><strong>+ $ 6,200.00</strong>
+              </div>
+              <div class="qc-feature__example-row">
+                <span>february</span><strong>+ $ 7,840.00</strong>
+              </div>
+              <div class="qc-feature__example-row">
+                <span>march</span><strong>+ $ 4,380.00</strong>
+              </div>
+              <div class="qc-feature__example-row">
+                <span>quarter total</span><strong>+ $ 18,420.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="qc-feature">
+            <span class="qc-feature__num">02</span>
+            <h3 class="qc-feature__title">Quarterly nudges, not panic alerts.</h3>
+            <p class="qc-feature__body">
+              One email a quarter, sent two weeks before the deadline.
+              We respect that your work is the work, not the email.
+            </p>
+          </article>
+
+          <article class="qc-feature">
+            <span class="qc-feature__num">03</span>
+            <h3 class="qc-feature__title">A clean handoff to your accountant.</h3>
+            <p class="qc-feature__body">
+              At year end, Marrow exports a single CSV your accountant
+              already knows how to read. No bespoke formats, no surprises.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIAL
+         Single feature quote. No 3-up identical headshots.
+         ========================================================= -->
+    <section class="qc-testimonial">
+      <div class="container qc-testimonial__inner">
+        <div>
+          <span class="qc-testimonial__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="qc-testimonial__quote">
+            I tried six different bookkeeping apps before Marrow. Five of them
+            wanted to be a platform. Marrow just wanted to tell me how much
+            I owe in April. That&rsquo;s the one I kept.
+          </blockquote>
+          <figcaption class="qc-testimonial__attribution">
+            <span class="qc-testimonial__avatar" aria-hidden="true">JR</span>
+            <span class="qc-testimonial__name">Jules Rosenberg</span>
+            <span class="qc-testimonial__sep" aria-hidden="true">&middot;</span>
+            <span>Illustrator, Brooklyn</span>
+          </figcaption>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PRICING
+         Two tiers, deliberately different shapes.
+         ========================================================= -->
+    <section class="qc-pricing" id="pricing">
+      <div class="container">
+        <header class="qc-pricing__lead">
+          <span class="eyebrow">Pricing</span>
+          <h2 class="qc-pricing__title">Honest pricing.</h2>
+          <p class="qc-pricing__lede">
+            The free tier is the whole product. Studio is for people who
+            need multi-currency or want to support the project.
+          </p>
+        </header>
+
+        <div class="qc-pricing__grid">
+
+          <article class="qc-tier">
+            <div>
+              <h3 class="qc-tier__name">Free</h3>
+              <p class="qc-tier__pitch">Track your money. Forever.</p>
+            </div>
+            <p class="qc-tier__price">
+              $0<span class="qc-tier__price-suffix">always</span>
+            </p>
+            <ul class="qc-tier__features">
+              <li>Income, expenses, tax estimate</li>
+              <li>Quarterly reminders</li>
+              <li>End-of-year CSV export</li>
+              <li>One bank account, one currency</li>
+            </ul>
+            <div class="qc-tier__cta">
+              <a class="btn btn--secondary" href="#start">Start free</a>
+            </div>
+          </article>
+
+          <article class="qc-tier qc-tier--studio">
+            <span class="qc-tier__badge">Studio</span>
+            <div>
+              <h3 class="qc-tier__name">Studio</h3>
+              <p class="qc-tier__pitch">For freelancers with several income streams.</p>
+            </div>
+            <p class="qc-tier__price">
+              $5<span class="qc-tier__price-suffix">per month, billed yearly</span>
+            </p>
+            <ul class="qc-tier__features">
+              <li>Everything in Free</li>
+              <li>Multi-currency, with daily rates</li>
+              <li>Custom expense categories</li>
+              <li>Up to four bank accounts</li>
+              <li>Priority email support</li>
+            </ul>
+            <div class="qc-tier__cta">
+              <a class="btn btn--primary" href="#start">Try Studio for 30 days</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAQ
+         Native disclosure. No modal-as-first-thought.
+         ========================================================= -->
+    <section class="qc-faq" id="faq">
+      <div class="container qc-faq__inner">
+        <h2 class="qc-faq__title">Questions people ask.</h2>
+        <div class="qc-faq__list">
+
+          <details class="qc-faq__item">
+            <summary class="qc-faq__summary">Where is my data stored?</summary>
+            <p class="qc-faq__answer">
+              In a Postgres database hosted on European servers, encrypted
+              at rest, with backups every six hours. We hold the keys; you
+              hold the data; if either of us goes away, you can leave with
+              a single CSV.
+            </p>
+          </details>
+
+          <details class="qc-faq__item">
+            <summary class="qc-faq__summary">What if I close my account?</summary>
+            <p class="qc-faq__answer">
+              You can export everything as CSV at any time. Closing the
+              account deletes the data within 30 days, and we email a
+              confirmation when the deletion runs. No dark-pattern
+              retention, no &ldquo;come back&rdquo; sequences.
+            </p>
+          </details>
+
+          <details class="qc-faq__item">
+            <summary class="qc-faq__summary">Do you sell anything to anyone?</summary>
+            <p class="qc-faq__answer">
+              No. There are no analytics SDKs, no ad pixels, no LLM training
+              pipelines. We charge for Studio precisely so we don&rsquo;t need
+              to monetise the data.
+            </p>
+          </details>
+
+          <details class="qc-faq__item">
+            <summary class="qc-faq__summary">Why does the free tier exist?</summary>
+            <p class="qc-faq__answer">
+              Because most freelancers don&rsquo;t need multi-currency, and
+              charging for the basics felt rude. Studio pays the bills;
+              Free is the product the way it should work.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CTA
+         Committed color section. The single drenched moment.
+         ========================================================= -->
+    <section class="qc-cta">
+      <div class="container qc-cta__inner">
+        <h2 class="qc-cta__title">
+          Set the rent <em>aside</em>, in three clicks.
+        </h2>
+        <p class="qc-cta__lede">
+          Free forever. No card to start. Five minutes to your first reminder.
+        </p>
+        <div>
+          <a class="btn btn--primary btn--lg" href="#start">Start free</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="qc-footer">
+    <div class="container">
+      <div class="qc-footer__inner">
+        <div class="qc-footer__brand">
+          <span class="qc-footer__brand-name">
+            <span class="qc-nav__brand-mark" aria-hidden="true"></span>
+            Marrow
+          </span>
+          <p class="qc-footer__pitch">
+            A quiet money tracker for solo creatives. Made in Lisbon and Berlin.
+          </p>
+        </div>
+
+        <div class="qc-footer__cols">
+          <div class="qc-footer__col">
+            <h3>Product</h3>
+            <ul>
+              <li><a href="#features">How it works</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#faq">Questions</a></li>
+              <li><a href="#changelog">Changelog</a></li>
+            </ul>
+          </div>
+          <div class="qc-footer__col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#press">Press kit</a></li>
+            </ul>
+          </div>
+          <div class="qc-footer__col">
+            <h3>Trust</h3>
+            <ul>
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#terms">Terms</a></li>
+              <li><a href="#security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="qc-footer__small">
+        <span>&copy; 2026 Marrow. All rights respected.</span>
+        <span>Built with the Marrow Theme.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
