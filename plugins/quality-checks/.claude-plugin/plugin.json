@@ -1,0 +1,9 @@
+{
+  "name": "quality-checks",
+  "description": "Eight-phase quality verification pipeline (security, code correctness, UI/UX craft, accessibility, performance, responsive, streamlining, final verification). Final line of defense before shipping; composes with impeccable, ui-ux-pro-max, and superpowers skills.",
+  "version": "1.0.0",
+  "author": {
+    "name": "getuslisted",
+    "email": "ops@getuslisted.com"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Quality block hook: warns/blocks on the absolute UI bans, high-risk security smells, and untinted neutrals before files are written.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/quality_block_hook.py"
+          }
+        ],
+        "matcher": "Edit|Write|MultiEdit"
+      }
+    ]
+  }
+}
